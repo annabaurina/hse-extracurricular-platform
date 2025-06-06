@@ -26,3 +26,11 @@ class Event(db.Model):
     date = db.Column(db.DateTime, nullable=False)
     description = db.Column(db.Text)
     organization_id = db.Column(db.Integer, db.ForeignKey('organizations.id'))
+
+class Vacancy(db.Model):
+    __tablename__ = 'vacancies'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.Text)
+    organization_id = db.Column(db.Integer, db.ForeignKey('organizations.id'))
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)

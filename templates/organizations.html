@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Organizations{% endblock %}
+
+{% block content %}
+<h2>Organizations Directory</h2>
+
+<div class="row mt-4">
+    {% for org in organizations %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ org.name }}</h5>
+                <p class="card-text">{{ org.description|truncate(100) }}</p>
+                <a href="/organization/{{ org.id }}" class="btn btn-primary">Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if current_user.role == 'admin' %}
+<a href="/admin/add_organization" class="btn btn-success">Add Organization</a>
+{% endif %}
+{% endblock %}

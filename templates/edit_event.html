@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Event Description{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Edit Event Description</h2>
+    <p><strong>Event:</strong> {{ event.title }}</p>
+    <p><strong>Date:</strong> {{ event.date.strftime('%Y-%m-%d %H:%M') }}</p>
+
+    <form method="POST">
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description"
+                      rows="8" required>{{ event.description }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Description</button>
+        <a href="{{ url_for('event_details', event_id=event.id) }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

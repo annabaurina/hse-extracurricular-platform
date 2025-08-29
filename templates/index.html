@@ -4,14 +4,17 @@
 
 {% block content %}
 <div class="jumbotron">
-    <h1 class="display-4">Welcome!</h1>
-    <p class="lead">Extracurricular Activities Platform at HSE University</p>
-    <hr class="my-4">
-    <p>Find organizations, vacancies and events</p>
-    <div class="d-grid gap-2 d-md-block">
-        <a class="btn btn-primary btn-lg" href="/organizations" role="button">Organizations</a>
-        <a class="btn btn-success btn-lg" href="/events" role="button">Events</a>
-        <a class="btn btn-info btn-lg" href="/vacancies" role="button">Vacancies</a>
+    <div class="text-center">
+        <h1 class="display-4">Welcome to HSE Platform</h1>
+        <p class="lead">Student Activities Management System</p>
+        <hr class="my-4 mx-auto" style="width: 50%">
+        <p>Discover student organizations and upcoming events</p>
+        
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+            <a class="btn btn-primary btn-lg" href="/organizations" role="button">Organizations</a>
+            <a class="btn btn-success btn-lg" href="/events" role="button">Events</a>
+            <a class="btn btn-info btn-lg" href="/vacancies" role="button">Opportunities</a>
+        </div>
     </div>
 </div>
 {% endblock %}

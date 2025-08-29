@@ -3,6 +3,23 @@ from flask import Blueprint, render_template, redirect, url_for
 from flask_login import login_required, current_user
 from models import User, Organization, Event
 
+
+
+
+# ВЫНЕСИТЕ СЮДА ЛОГИКУ ИЗ God Object
+
+# этот код устарел, замените на свежий кусок из app.py
+
+
+
+
+
+
+
+
+
+
+
 main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
@@ -17,7 +34,6 @@ def dashboard():
     User dashboard route
     Requires authentication
     """
-    # Get user's upcoming events (example of enhanced functionality)
     upcoming_events = Event.query.filter(
         Event.date >= datetime.utcnow()
     ).order_by(Event.date.asc()).limit(5).all()
